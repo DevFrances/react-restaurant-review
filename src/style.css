@@ -1,0 +1,53 @@
+
+.headers{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.header p{
+    color: white;
+    font-size: 30px;
+    font-family: monospace;
+}
+.header p:nth-child(2){
+    font-size: 18px;
+}
+
+.resto-list{
+    height: 500px;
+    border: 1px solid rgba(31, 7, 61, 0.897);
+    border-radius: 5px;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px 3px;
+
+}
+.resto{
+    border-top: 1px solid black;
+    padding-top: 1em;
+}
+img{
+    width: 100%;
+    height: auto;
+    padding-top: 1.5em;
+}
+li{
+    list-style: none;
+    text-align: left;
+}
+#myModal, #reviewModal{
+    display: none;
+    height: 100%;
+}
+.search{
+    width: 50%;
+    height: auto;
+    color: white;
+    background:rgb(5, 5, 43) ;
+    border: 1px solid rgb(5, 5, 43);
+    padding-top: 1em;
+}
+.review{
+    width: 10%;
+    /* height: 150px; */
+}
+

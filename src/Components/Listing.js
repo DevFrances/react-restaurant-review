@@ -1,0 +1,41 @@
+import React, { Component } from 'react'
+import Data from './db.js'
+import Restaurant from './Restaurant.js'
+import Comment from './Comment.js'
+export default class Listing extends Component {
+   constructor(props){
+    super(props);
+
+   }
+  render() {
+    let restaurantListArray = [];
+console.log(this.props)
+    this.props.restaurantList.forEach((item, index) => {
+      
+    restaurantListArray.push(
+        <Restaurant
+          key={index}
+          index ={index}
+          restaurantName={item.restaurantName}
+          address={item.address}
+          picture={item.picURL}
+          reviews={item.ratings}   //the array that contains the reviews(comment and stars)       
+          rating={item.rating}
+        />,
+      );
+    
+    });
+
+    return (
+      
+         <div class="col-md-4 listings ">             
+                 <div class="container overflow-auto resto-list">
+                   {restaurantListArray}    
+                 </div>                           
+         </div>
+                  
+                    
+      
+    )
+  }
+}
