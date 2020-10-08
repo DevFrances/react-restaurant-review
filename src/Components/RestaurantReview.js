@@ -59,11 +59,15 @@ function RestaurantReview(){
    setRestaurant((prevRestaurantList)=>{
      return [...prevRestaurantList, restaurant]
    })
+   setFilterRestaurants((prevFilterRestaurant)=>{
+    return [...prevFilterRestaurant, restaurant]
+  })
  }
  function addReview(review){
 let listOfRestaurant = restaurants;
 listOfRestaurant[review.index].ratings.push({stars: review.stars,comment: review.comment});
   setRestaurant(listOfRestaurant);
+  setFilterRestaurants(listOfRestaurant)
   console.log(restaurants)
  }
  function filterRestaurant(rating){

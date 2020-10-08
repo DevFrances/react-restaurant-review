@@ -20,6 +20,7 @@ function MapContainer({ restaurants, addRestaurant, addReview}) {
   const onLoad = marker => {
     console.log('marker: ', marker)
   }
+   const [selectedMarker, setSelectedMarker] = React.useState(null);
 
   const [clickedLng, setClickedLng] = React.useState(0);
   const [clickedLat, setClickedLat] = React.useState(0);
@@ -55,12 +56,17 @@ closeMap.addEventListener('click', function(){
               zoom={15}
               id='map'
               //  onUnmount={onUnmount}
-              onClick={event => userClick(event)}>
+               onClick={event => userClick(event)}
+              >
 
 
               <Marker
                 onLoad={onLoad}
-                position={center}/>
+                position={center}
+                onClick={() => {
+                setSelectedMarker(center);
+               }}
+                />
                          
       {restaurants.map((test, index)=>{  
         let lat =parseFloat( test.lat);
@@ -69,10 +75,18 @@ closeMap.addEventListener('click', function(){
         position = {{lat:lat, lng:lng}}
         />
       })}
-      <InfoWindow>
-
-      </InfoWindow>
-
+     {selectedMarker && (
+   <InfoWindow
+      onCloseClick={() => {
+         setSelectedMarker(null);
+      }}
+      position={{
+         lat: selectedMarker.latitude,
+         lng: selectedMarker.longitude
+      }}
+   >
+   </InfoWindow>
+)}
             </GoogleMap>
           </LoadScript>
           <Listing

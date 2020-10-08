@@ -68,7 +68,7 @@ export default class Modal extends Component {
                   </div>
                   <div class="form-group">
                   {this.props.latitude}
-                    <input type="text" class="form-control" onChange={this.handleInputChange}  placeholder="Enter Latitude" name="lat" ref={input => this.latitude = input} />
+                    <input type="text"  class="form-control" onChange={this.handleInputChange}  placeholder="Enter Latitude" name="lat" ref={input => this.latitude = input} />
                   </div>
                   <div class="form-group">
                   {this.props.longitude}
@@ -90,7 +90,7 @@ export default class Modal extends Component {
 
                   </select>
                   </div>
-                  <button  class="btn btn-success" >Add</button>
+                  <button  class="btn btn-success" data-dismiss="modal">Add</button>
                 </form>
 
 
