@@ -63,28 +63,43 @@ closeMap.addEventListener('click', function(){
               <Marker
                 onLoad={onLoad}
                 position={center}
-                onClick={() => {
-                setSelectedMarker(center);
-               }}
+                
                 />
                          
       {restaurants.map((test, index)=>{  
         let lat =parseFloat( test.lat);
         let lng = parseFloat(test.lng);
         return <Marker
+        key ={index}
         position = {{lat:lat, lng:lng}}
-        />
+        onClick={() => {
+                setSelectedMarker(test);
+               }}
+        >
+ 
+          </Marker>
       })}
-     {selectedMarker && (
+    {selectedMarker && (
    <InfoWindow
       onCloseClick={() => {
          setSelectedMarker(null);
       }}
+     
       position={{
-         lat: selectedMarker.latitude,
-         lng: selectedMarker.longitude
+         lat: parseFloat(selectedMarker.lat),
+         lng: parseFloat(selectedMarker.lng)
       }}
    >
+     
+     <div className="resto row">
+                        <div className="col-md-7">
+                          <p>
+                            <li><b>Restaurant: </b>{selectedMarker.restaurantName}</li>
+                            <li><b>Address: </b>{selectedMarker.address}</li>
+                       </p>                                              
+                        </div>
+                        
+                      </div>
    </InfoWindow>
 )}
             </GoogleMap>
