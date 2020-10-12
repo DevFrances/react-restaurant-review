@@ -5,6 +5,7 @@ import MapContainer from './MapContainer';
  import Filter from'./Filter.js';
 import Data from './db.js'
 import AddReview from './addReview.js'
+
 function RestaurantReview(){ 
   const [filterRestaurants, setFilterRestaurants] = React.useState([])
   const [restaurants, setRestaurant] = React.useState([])
@@ -55,6 +56,7 @@ function RestaurantReview(){
         console.log(jsonRestaurant)
       });
   }, [6.5088, 3.3137]); 
+
  function handleRestaurant(restaurant){
    setRestaurant((prevRestaurantList)=>{
      return [...prevRestaurantList, restaurant]
@@ -63,13 +65,15 @@ function RestaurantReview(){
     return [...prevFilterRestaurant, restaurant]
   })
  }
+
  function addReview(review){
 let listOfRestaurant = restaurants;
 listOfRestaurant[review.index].ratings.push({stars: review.stars,comment: review.comment});
   setRestaurant(listOfRestaurant);
   setFilterRestaurants(listOfRestaurant)
-  console.log(restaurants)
+  console.log(filterRestaurants)
  }
+
  function filterRestaurant(rating){
   let listOfRestaurant = restaurants;
   let newList =[];
@@ -82,6 +86,7 @@ listOfRestaurant[review.index].ratings.push({stars: review.stars,comment: review
   console.log(rating)
   console.log(restaurants)
  }
+ 
    return (
       <div>
         <NavBar/>

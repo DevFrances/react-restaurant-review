@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Data from './db.js'
+
 import Restaurant from './Restaurant.js'
-import Comment from './Comment.js'
+
 export default class Listing extends Component {
    constructor(props){
     super(props);

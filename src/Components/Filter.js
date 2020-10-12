@@ -10,9 +10,7 @@ export default class Filter extends Component {
 
   }
   handleInputChange(event) {   
-    // this.setState({[event.target.name]: event.target.value});
-    // console.log(this.state.rating)
-    // this.props.filterByRating(this.state.rating)
+    
     this.setState({[event.target.name]: event.target.value}, () => {
       this.props.filterByRating(this.state.rating);
     });

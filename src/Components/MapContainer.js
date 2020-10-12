@@ -53,9 +53,7 @@ closeMap.addEventListener('click', function(){
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}
-              zoom={15}
-              id='map'
-              //  onUnmount={onUnmount}
+              zoom={15}            
                onClick={event => userClick(event)}
               >
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
- import Listing from './Listing.js'
+
 export default class AddReview extends Component {
   constructor(props){
     super(props);
@@ -11,6 +11,7 @@ export default class AddReview extends Component {
        stars:"",
        comment:""    
   }
+  
   }
 
   handleInputChange(event) {
@@ -25,7 +26,9 @@ export default class AddReview extends Component {
     this.props.addReview(this.state)
     console.log(this.state)  
     console.log(this.index.value) 
+    event.target.reset();
   } 
+  
     closeModal(){
         let closeReview = document.getElementById('closeReviewModal')
         closeReview.addEventListener('click', function(){
@@ -57,7 +60,7 @@ export default class AddReview extends Component {
 
                   <div class="form-group" >
                     <label>Rate this restaurant:</label>
-                  <select name="stars" id="cars" onChange={this.handleInputChange}>
+                  <select name="stars"  onChange={this.handleInputChange}>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -70,7 +73,7 @@ export default class AddReview extends Component {
                             
                   </div>
                   
-                  <button  class="btn btn-success" >Add</button>
+                  <button  class="btn btn-success" id="addReviewClose" data-dismiss="modal" type="submit" >Add</button>
                 </form>
 
 

@@ -41,7 +41,7 @@ export default class Modal extends Component {
     event.preventDefault();
     console.log(this.state)
     this.props.addRestaurant(this.state)
-   
+    event.target.reset();
   } 
   componentDidMount(){
     this.setState({lat: this.props.latitude})
@@ -90,7 +90,7 @@ export default class Modal extends Component {
 
                   </select>
                   </div>
-                  <button  class="btn btn-success" data-dismiss="modal">Add</button>
+                  <button  class="btn btn-success" data-dismiss="myModal" type="submit">Add</button>
                 </form>
 
 

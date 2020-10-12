@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AddReview from './addReview.js'
+
 export default class Restaurant extends Component {
   constructor(props){
     super(props);
@@ -16,10 +16,11 @@ export default class Restaurant extends Component {
    
   }
     render() {
-      
+      console.log("hey")
+      console.log(this.props.reviews)
       let reviews=[];
       this.props.reviews.forEach((item)=>{
-          reviews.push(<a class="dropdown-item" href="#"><b>Comment</b>{item.comment},<b>Rating</b>{item.stars}</a>)
+          reviews.push(<a class="dropdown-item" href="#"><b>Comment:</b> {item.comment}<br/><b>Rating:</b> {item.stars}<hr/></a>)
       })
         return (
         
