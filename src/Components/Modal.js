@@ -10,14 +10,7 @@ export default class Modal extends Component {
       lng: 0,
       picURL:'https://lh5.googleusercontent.com/p/AF1QipMfCQ-dXE9EqgiWkJr9QQRshjKpDmPAjzWel7fE=w408-h305-k-no',
       ratings: [
-        {
-          stars: 4,
-          comment: 'Great! But not many veggie options.'
-        },
-        {
-          stars: 5,
-          comment: 'My favorite restaurant!'
-        },
+        
       ],
       rating: ""
     

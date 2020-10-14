@@ -21,7 +21,7 @@ function MapContainer({ restaurants, addRestaurant, addReview}) {
     console.log('marker: ', marker)
   }
    const [selectedMarker, setSelectedMarker] = React.useState(null);
-
+// const [restaurantList, setRestaurantList] = React.useState(restaurants)
   const [clickedLng, setClickedLng] = React.useState(0);
   const [clickedLat, setClickedLat] = React.useState(0);
   const userClick = (event) => {
@@ -94,7 +94,7 @@ closeMap.addEventListener('click', function(){
                           <p>
                             <li><b>Restaurant: </b>{selectedMarker.restaurantName}</li>
                             <li><b>Address: </b>{selectedMarker.address}</li>
-                       </p>                                              
+                          </p>                                              
                         </div>
                         
                       </div>

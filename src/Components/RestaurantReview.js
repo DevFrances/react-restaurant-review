@@ -9,6 +9,12 @@ import AddReview from './addReview.js'
 function RestaurantReview(){ 
   const [filterRestaurants, setFilterRestaurants] = React.useState([])
   const [restaurants, setRestaurant] = React.useState([])
+  // for a child component to refresh itself, a state of parent component should change 
+  const [refreshComponents,setRefreshComponents] = React.useState(false)
+  const refresh = () =>{
+    setRefreshComponents(!refreshComponents)
+  }
+
   let jsonRestaurant = Data
   React.useEffect(() => {
     axios
@@ -69,8 +75,11 @@ function RestaurantReview(){
  function addReview(review){
 let listOfRestaurant = restaurants;
 listOfRestaurant[review.index].ratings.push({stars: review.stars,comment: review.comment});
-  setRestaurant(listOfRestaurant);
-  setFilterRestaurants(listOfRestaurant)
+   setRestaurant(listOfRestaurant);
+  // setFilterRestaurants(listOfRestaurant)
+  setFilterRestaurants(prevFilterRestaurant =>prevFilterRestaurant = listOfRestaurant
+  )
+  refresh();
   console.log(filterRestaurants)
  }
 
@@ -96,11 +105,12 @@ listOfRestaurant[review.index].ratings.push({stars: review.stars,comment: review
 
         <Filter
         filterByRating = {filterRestaurant}
+        
         />
         </div>
         </div>
         <MapContainer
-        
+                refresh = {refreshComponents}
                restaurants = {filterRestaurants}
                addRestaurant = {handleRestaurant}
                addReview = {addReview}

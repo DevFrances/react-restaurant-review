@@ -19,9 +19,9 @@ export default class Filter extends Component {
     render() {
       
         return (
-            <div class="row">
-               <div class="search ">
-               <p><label for="rating">Search by rating:</label>
+            <div className="row">
+               <div className="search ">
+               <p><label htmlFor="rating">Search by rating:</label>
 
                   <select name="rating" id="cars" onChange={this.handleInputChange}>
                     <option value="0">0</option>

@@ -4,8 +4,11 @@ export default class Restaurant extends Component {
   constructor(props){
     super(props);
   this.popUpModal = this.popUpModal.bind(this);
-  
+  this.state={
+    reviews: this.props.reviews
   }
+  }
+  
   popUpComment(){
     document.getElementById('myComment').style.display = "inline-block";
    
@@ -15,23 +18,31 @@ export default class Restaurant extends Component {
     document.getElementById('index').value = this.props.index;
    
   }
-    render() {
-      console.log("hey")
+  componentDidUpdate(prevProps){
+    console.log("hey")
       console.log(this.props.reviews)
-      let reviews=[];
-      this.props.reviews.forEach((item)=>{
-          reviews.push(<a class="dropdown-item" href="#"><b>Comment:</b> {item.comment}<br/><b>Rating:</b> {item.stars}<hr/></a>)
+      if(prevProps.reviews !== this.props.reviews) {
+        this.setState({reviews: this.props.reviews});
+      }
+    
+  }
+    render() {
+      
+      let reviewsArray=[];
+      this.props.reviews.forEach((item, index)=>{
+          reviewsArray.push(<a class="dropdown-item"key={index} href="#"><b>Comment:</b> {item.comment}<br/><b>Rating:</b> {item.stars}<hr/></a>)
       })
+      //  this.setState({reviews:reviewsArray})
         return (
         
                 <div className="resto row">
                         <div  className="col-md-5"> <img src={this.props.picture} alt="cutleries"/> </div>
                         <div className="col-md-7">
-                          <p>
+                          <div>
                             <li><b>Restaurant: </b>{this.props.restaurantName}</li>
                             <li><b>Address: </b>{this.props.address}</li>
                             <li><b>Rating: </b> {this.props.rating}</li>  
-                            <li><b>Review: </b> {this.props.review}</li>  
+                            {/* <li><b>Review: </b> {this.props.review}</li>   */}
                           
                             <div className="container">
                             <button onClick= {this.popUpModal}>Add Review</button>
@@ -41,13 +52,13 @@ export default class Restaurant extends Component {
                                   View Review(s)
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  {reviews}
+                                  {reviewsArray}
                                   
                                 </div>
                               </div>
                             </div>
                                                                              
-                          </p>
+                          </div>
                        
                           
                         </div>
