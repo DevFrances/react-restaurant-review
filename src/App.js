@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+
 import './bootstrap.min.css';
 import './style.css';
 import RestaurantReview from './Components/RestaurantReview';

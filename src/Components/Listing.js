@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import Restaurant from './Restaurant.js'
 
 export default class Listing extends Component {
