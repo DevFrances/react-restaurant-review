@@ -12,16 +12,22 @@ function MapContainer({ restaurants, addRestaurant, addReview}) {
     height: '500px',
     float: 'right'
   };
-      
-  const center = {
-    lat: 6.5088,
-    lng: 3.3137
-  };
+  
+  const [center, setCenter]= React.useState({})
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+       setCenter( { 
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+      })
+      }
+     
+    );
+   
   const onLoad = marker => {
     console.log('marker: ', marker)
   }
    const [selectedMarker, setSelectedMarker] = React.useState(null);
-// const [restaurantList, setRestaurantList] = React.useState(restaurants)
   const [clickedLng, setClickedLng] = React.useState(0);
   const [clickedLat, setClickedLat] = React.useState(0);
   const userClick = (event) => {
@@ -29,17 +35,15 @@ function MapContainer({ restaurants, addRestaurant, addReview}) {
     let lng = event.latLng.lng();
     setClickedLat(lat);
     setClickedLng(lng);
-    console.log(lat)
-    console.log(lng)
-
+   
     //  Do something like opening modal
     document.getElementById('myModal').style.display = "inline-block";
-let closeMap = document.getElementById('close')
-closeMap.addEventListener('click', function(){
+    let closeMap = document.getElementById('close')
+    closeMap.addEventListener('click', function(){
     document.getElementById('myModal').style.display = "none"
   })
   }
-
+  
   return (
     <div>
       <div class="container-fluid" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -58,12 +62,14 @@ closeMap.addEventListener('click', function(){
               >
 
 
+
               <Marker
                 onLoad={onLoad}
                 position={center}
-                
+                options={{icon:"http://maps.google.com/mapfiles/ms/icons/blue-dot.png"}}
+
                 />
-                         
+               
       {restaurants.map((test, index)=>{  
         let lat =parseFloat( test.lat);
         let lng = parseFloat(test.lng);

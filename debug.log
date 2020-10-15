@@ -28,3 +28,5 @@
 [1013/210754.685:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Donatus\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\f5d74649-e83a-4dba-a36c-1e3352cd9173: The system cannot find the path specified. (0x3)
 [1013/210754.715:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1014/002349.202:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1014/111038.104:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1014/130944.030:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

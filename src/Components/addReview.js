@@ -14,18 +14,13 @@ export default class AddReview extends Component {
   
   }
 
-  handleInputChange(event) {
-   
+  handleInputChange(event) {   
       this.setState({[event.target.name]: event.target.value});
       this.setState({index: this.index.value})
-    
-      console.log({[event.target.name]: event.target.value})
   }
   handleSubmit(event) {
     event.preventDefault();
     this.props.addReview(this.state)
-    console.log(this.state)  
-    console.log(this.index.value) 
     event.target.reset();
   } 
   
@@ -55,7 +50,7 @@ export default class AddReview extends Component {
                  
                   <input type="text" id="index" ref={input => this.index = input}/>
                   <div class="form-group">
-        <textarea class="form-control" id="comment"  rows="8" onChange={this.handleInputChange} name="comment"  >{this.addReview}</textarea>
+                  <textarea class="form-control" id="comment"  rows="8" onChange={this.handleInputChange} name="comment"  >{this.addReview}</textarea>
                   </div>
 
                   <div class="form-group" >

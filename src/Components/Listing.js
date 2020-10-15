@@ -9,7 +9,6 @@ export default class Listing extends Component {
    }
   render() {
     let restaurantListArray = [];
-console.log(this.props)
     this.props.restaurantList.forEach((item, index) => {
       
     restaurantListArray.push(

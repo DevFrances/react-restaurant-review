@@ -19,7 +19,7 @@ export default class Restaurant extends Component {
    
   }
   componentDidUpdate(prevProps){
-    console.log("hey")
+   
       console.log(this.props.reviews)
       if(prevProps.reviews !== this.props.reviews) {
         this.setState({reviews: this.props.reviews});
@@ -32,7 +32,6 @@ export default class Restaurant extends Component {
       this.props.reviews.forEach((item, index)=>{
           reviewsArray.push(<a class="dropdown-item"key={index} href="#"><b>Comment:</b> {item.comment}<br/><b>Rating:</b> {item.stars}<hr/></a>)
       })
-      //  this.setState({reviews:reviewsArray})
         return (
         
                 <div className="resto row">
@@ -41,9 +40,7 @@ export default class Restaurant extends Component {
                           <div>
                             <li><b>Restaurant: </b>{this.props.restaurantName}</li>
                             <li><b>Address: </b>{this.props.address}</li>
-                            <li><b>Rating: </b> {this.props.rating}</li>  
-                            {/* <li><b>Review: </b> {this.props.review}</li>   */}
-                          
+                            <li><b>Rating: </b> {this.props.rating}</li>                            
                             <div className="container">
                             <button onClick= {this.popUpModal}>Add Review</button>
 
