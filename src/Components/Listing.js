@@ -4,7 +4,7 @@ import Restaurant from './Restaurant.js'
 export default class Listing extends Component {
    constructor(props){
     super(props);
-    
+   
    }
   render() {
     let restaurantListArray = [];
@@ -19,6 +19,7 @@ export default class Listing extends Component {
           picture={item.picURL}
           reviews={item.ratings}   //the array that contains the reviews(comment and stars)       
           rating={item.rating}
+          center={this.props.center}
         />,
       );
     

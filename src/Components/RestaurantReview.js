@@ -15,13 +15,24 @@ function RestaurantReview() {
   const refresh = () => {
     setRefreshComponents(!refreshComponents)
   }
-
+  const [center, setCenter]= React.useState({})
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+     setCenter( { 
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+    })
+    }
+   
+  );
+  
   let jsonRestaurant = Data
   React.useEffect(() => {
+  let url=  "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+parseFloat(center.lat)+","+parseFloat(center.lng)+"&radius=2000&type=restaurant&key=AIzaSyAMDtC9Z6uMrTV_NsWjjdeskdGE5W-hITY";
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=6.4474,3.3903&radius=2000&type=restaurant&key=AIzaSyAMDtC9Z6uMrTV_NsWjjdeskdGE5W-hITY`
-      )
+       url
+      ) 
       .then((res) => {
         let results = res.data.results
         let newArr = results.map((item) => {
@@ -61,10 +72,10 @@ function RestaurantReview() {
         //set state
         setRestaurant(jsonRestaurant);
 
-        //  updatingthe filter restaurant state
+        //  updating the filter restaurant state
         setFilterRestaurants(jsonRestaurant)
       });
-  }, [6.5088, 3.3137]);
+  }, [center.lat, center.lng]);
 
     //storage of new restaurant data 
   function handleRestaurant(restaurant) {
@@ -113,6 +124,7 @@ function RestaurantReview() {
         restaurants={filterRestaurants}
         addRestaurant={handleRestaurant}
         addReview={addReview}
+        center= {center}
       />
       <AddReview />
     </div>

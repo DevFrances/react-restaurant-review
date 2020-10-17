@@ -5,7 +5,7 @@ import AddReview from './addReview.js'
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 
 
-function MapContainer({ restaurants, addRestaurant, addReview}) {
+function MapContainer({ restaurants, addRestaurant, addReview, center}) {
   
   const containerStyle = {
     width: '800px',
@@ -13,16 +13,7 @@ function MapContainer({ restaurants, addRestaurant, addReview}) {
     float: 'right'
   };
   
-  const [center, setCenter]= React.useState({})
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-       setCenter( { 
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-      })
-      }
-     
-    );
+  
    
   const onLoad = marker => {
     console.log('marker: ', marker)
@@ -110,7 +101,6 @@ function MapContainer({ restaurants, addRestaurant, addReview}) {
           </LoadScript>
           <Listing
       restaurantList={restaurants} 
-          
           />
           <Modal
           latitude = {clickedLat}
