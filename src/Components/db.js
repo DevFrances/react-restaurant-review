@@ -3,8 +3,8 @@ const Data = [
       id: 1,
       restaurantName: 'Snapcafe & resto',
       address: '7 Race Course Rd, GRA',
-      lat: 6.513747,  
-      lng: 3.302456,
+      lat: 6.447273,  
+      lng: 3.397216,
       picURL:
         'https://lh5.googleusercontent.com/p/AF1QipMfCQ-dXE9EqgiWkJr9QQRshjKpDmPAjzWel7fE=w408-h305-k-no',
       ratings: [
@@ -24,8 +24,8 @@ const Data = [
       restaurantName: 'Chips Plus',
       address: 'Nassarawa-Mariri Rd Tarauni',
   
-      lat: 6.503557,
-      lng: 3.300052,
+      lat: 6.446932,
+      lng: 3.398246,
       picURL:
         'https://lh5.googleusercontent.com/p/AF1QipPcfHNMoupbg_jtvNsVbVLVCrPnElFfT8KEjZgZ=w408-h544-k-no',
       ratings: [
@@ -45,8 +45,8 @@ const Data = [
       restaurantName: 'Pizza & Gurasa',
       address: '10 Lugard Avenue, By Race Course Rd',
   
-      lat: 6.501211,
-      lng: 3.308121,
+      lat: 6.446335,
+      lng: 3.396186,
       picURL:
         'https://lh5.googleusercontent.com/p/AF1QipOBdhkzqrfFNdKxOhVvQW3LKeH_WVU0amg2aQaw=w408-h408-k-no',
   
@@ -66,8 +66,8 @@ const Data = [
       restaurantName: 'Corner Indian Grill',
       address: 'Lafia Rd, Nassarawa chaha',
   
-      lat: 6.504111,
-      lng: 3.317691,
+      lat: 6.448126,
+      lng: 3.400134,
       picURL:
         'https://lh5.googleusercontent.com/p/AF1QipP1ma2w_x7YZXI1UyVcSmEp2hqy_tYW7jQHQXJn=w426-h240-k-no',
   
@@ -88,8 +88,8 @@ const Data = [
       restaurantName: "Marietta's Restaurant",
       address: '5 Gidado Mukhtar Link, Nassarawa, Lagos',
   
-      lat: 6.515026,
-      lng: 3.305889,
+      lat: 6.453414,
+      lng: 3.392881,
       picURL:
         'https://lh5.googleusercontent.com/p/AF1QipNgSbufzimoX--pI94m8j_Vq5yCVet6GslE_6rz=w408-h343-k-no',
   
@@ -111,8 +111,8 @@ const Data = [
       restaurantName: 'habib bread',
       address: 'Habib Bread St, Giginyu, kawon kudu',
   
-      lat: 6.505433,
-      lng: 3.305288,
+      lat: 6.441943,
+      lng: 3.400563,
       picURL:
         '',
         rating:0,
@@ -133,8 +133,8 @@ const Data = [
       restaurantName: 'Green Park Restaurant',
       address: 'adjacent to Ali Avenue, Ahmadu Bello, Lagos',
   
-      lat: 6.513875,
-      lng: 6.307348,
+      lat: 6.447401,
+      lng: 6.395156,
       picURL:
         'https://lh5.googleusercontent.com/p/AF1QipPE6-cjEohpRYBqrIUYFZef4JXUOPxbCDPBBqxJ=w408-h270-k-no',
         rating:0,
@@ -154,8 +154,8 @@ const Data = [
       restaurantName: 'Raudat Kitchen',
       address: '22, Alu Ave, Nassarawa, Kano',
   
-      lat: 6.504836,
-      lng: 3.303486,
+      lat: 6.443478,
+      lng: 3.402108,
       picURL:
         'https://lh5.googleusercontent.com/p/AF1QipNGhzNQkkWMvJ4b3rmIYbAJKti2ciBVJBy1B0AY=w408-h285-k-no',
         rating:0,
@@ -176,8 +176,8 @@ const Data = [
       restaurantName: 'Taj Mahal Indian Cuisine',
       address: 'Alu Ave, GRA, Okota',
   
-      lat: 6.504836,
-      lng: 3.320909,
+      lat: 6.448553,
+      lng: 3.403009,
       picURL:
         'https://lh5.googleusercontent.com/p/AF1QipMugsjJBDqSFFXRP77VTp5tyv9zq6wMuUWtuIIc=w426-h240-k-no',
         rating:0,
@@ -198,8 +198,8 @@ const Data = [
       restaurantName: 'Shaban Restaurant',
       address: 'Wudil Rd, Tarauni, Okota',
   
-      lat: 6.506968,
-      lng: 3.303529,
+      lat: 6.452092,
+      lng: 3.400563,
       picURL:
         'https://lh5.googleusercontent.com/p/AF1QipM_NAqut_BIDZRN3PpjAxTYTq6plvsLvw3CENpr=w408-h306-k-no',
         rating:0,
